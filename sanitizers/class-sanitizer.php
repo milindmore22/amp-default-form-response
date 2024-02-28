@@ -51,9 +51,6 @@ class Sanitizer extends AMP_Base_Sanitizer {
 		);
 
 		foreach ( $elements as $attribute => $element ) {
-			if ( $element ) {
-				continue;
-			}
 
 			$div      = $this->dom->createElement( 'div' );
 			$template = $this->dom->createElement( 'template' );
