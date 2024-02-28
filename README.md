@@ -10,12 +10,15 @@ This WordPress plugin is designed to modify the default form responses on AMP pa
 
 ## Installation
 
-1. Download the plugin and extract the files.
-2. Rename the plugin's folder to `amp-skeleton-compat`.
-3. Replace `AMP_Plugin_Name_Compat` with your namespace in every file.
-4. Change the plugin name to your desired name.
-5. Add your name as the author.
-6. Add your plugin URI.
+1. Download the plugin files from the GitHub repository.
+2. Log in to your WordPress admin panel.
+3. Navigate to `Plugins > Add New`.
+4. Click on the `Upload Plugin` button at the top of the page.
+5. Click `Choose File` and select the downloaded plugin file.
+6. Click `Install Now`.
+7. After the plugin has been installed, click `Activate Plugin`.
+
+Now, the AMP Default Form Response Override plugin should be installed and activated on your WordPress site.
 
 ## Usage
 

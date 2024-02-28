@@ -50,11 +50,6 @@ class Sanitizer extends AMP_Base_Sanitizer {
 			'submitting'     => null,
 		);
 
-		foreach ( $elements as $attribute => $element ) {
-			if ( $element ) {
-				continue;
-			}
-
 			$div      = $this->dom->createElement( 'div' );
 			$template = $this->dom->createElement( 'template' );
 			$div->setAttribute( 'class', 'amp-wp-default-form-message' );
@@ -62,20 +57,20 @@ class Sanitizer extends AMP_Base_Sanitizer {
 			// Create a p element.
 			$p = $this->dom->createElement( 'p' );
 
-			if ( 'submitting' === $attribute ) {
-				// Add the text node to the p element of submitting message.
-				$p->appendChild( $this->dom->createTextNode( __( 'Submitting...' ) ) );
+		if ( 'submitting' === $attribute ) {
+			// Add the text node to the p element of submitting message.
+			$p->appendChild( $this->dom->createTextNode( __( 'Submitting...' ) ) );
 
-			} else {
-				if ( 'submit-success' === $attribute ) {
-					// Add the text node to the p element of success message.
-					$p->appendChild( $this->dom->createTextNode( __( 'Form Submitted Successfully!' ) ) );
+		} else {
+			if ( 'submit-success' === $attribute ) {
+				// Add the text node to the p element of success message.
+				$p->appendChild( $this->dom->createTextNode( __( 'Form Submitted Successfully!' ) ) );
 
-				} elseif ( 'submit-error' === $attribute ) {
-					// Add the text node to the p element of error message.
-					$p->appendChild( $this->dom->createTextNode( __( 'Form Submission Failed!' ) ) );
-				}
+			} elseif ( 'submit-error' === $attribute ) {
+				// Add the text node to the p element of error message.
+				$p->appendChild( $this->dom->createTextNode( __( 'Form Submission Failed!' ) ) );
 			}
+		}
 
 			// Set the attribute to the div element.
 			$div->setAttribute( $attribute, '' );
@@ -86,7 +81,6 @@ class Sanitizer extends AMP_Base_Sanitizer {
 			$template->setAttribute( 'type', 'amp-mustache' );
 			$div->appendChild( $template );
 			$form->appendChild( $div );
-		}
 	}
-
 }
+
